@@ -1,6 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+
  *
  * @format
  * @flow strict-local
@@ -14,6 +13,11 @@ import {
   View,
   Text,
   StatusBar,
+  Alert,
+  Button,
+  TouchableOpacity,
+  Image, 
+  ImageBackground,
 } from 'react-native';
 
 import {
@@ -32,39 +36,30 @@ const App: () => React$Node = () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
+
           <View style={styles.body}>
+
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
+              <Text style={styles.setTitle}>
+                You're all set.
               </Text>
             </View>
+
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
+              <Text style={styles.diffTitle}>
+                Let's start making a difference!
               </Text>
             </View>
+
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
+              <View style={styles.startButtonStyle}>
+                <Text style={styles.buttonText}>
+                  GET STARTED
+                </Text>
+                
+              </View>
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -83,6 +78,13 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: Colors.white,
   },
+
+  backgroundImage: {
+    height: 200, 
+    width: 200, 
+    resizeMode: 'stretch',
+  }, 
+
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
@@ -108,6 +110,45 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
+  },
+
+  setTitle: {
+    fontSize: 25,
+    color: Colors.black,
+    textAlign: 'center',
+    marginTop: 40,
+
+  },
+
+  diffTitle: {
+    fontSize: 38,
+    fontWeight: '300',
+    textAlign: 'center',
+    color: Colors.black,
+
+  },
+
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'center', 
+    alignItems: 'center',
+    margin: 'auto',
+  },
+
+  startButtonStyle: {
+    padding: 5, 
+    height: 50, 
+    width: 365, 
+    borderRadius: 50, 
+    backgroundColor: "#4ccade",
+    marginTop: 50,
+  },
+
+  buttonText: {
+    color: Colors.white,
+    fontSize: 20,
+    textAlign: 'center',
+    marginTop: 5,
   },
 });
 

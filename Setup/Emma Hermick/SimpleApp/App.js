@@ -1,11 +1,7 @@
-/**
 
- *
- * @format
- * @flow strict-local
- */
+import 'react-native-gesture-handler';
 
-import React from 'react';
+import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -28,44 +24,81 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+import {
+  NavigationContainer, StackActions
+} from '@react-navigation/native';
+
+import {
+  createStackNavigator
+} from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Start"
+          component={StartScreen}
+          options={{ title: ' ' }}
+          />
 
-          <View style={styles.body}>
+          <Stack.Screen name="Home" component={HomeScreen} />
 
-            <View style={styles.sectionContainer}>
-              <Text style={styles.setTitle}>
-                You're all set.
-              </Text>
-            </View>
-
-            <View style={styles.sectionContainer}>
-              <Text style={styles.diffTitle}>
-                Let's start making a difference!
-              </Text>
-            </View>
-
-            <View style={styles.sectionContainer}>
-              <View style={styles.startButtonStyle}>
-                <Text style={styles.buttonText}>
-                  GET STARTED
-                </Text>
-                
-              </View>
-            </View>
-
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
+
+const StartScreen = ({ navigation }) => {
+  return (
+    <>
+    <StatusBar barStyle="dark-content" />
+    <SafeAreaView>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
+
+        <View style={styles.body}>
+
+          <View style={styles.sectionContainer}>
+            <Text style={styles.setTitle}>
+              You're all set.
+            </Text>
+          </View>
+
+          <View style={styles.sectionContainer}>
+            <Text style={styles.diffTitle}>
+              Let's start making a difference!
+            </Text>
+          </View>
+
+          <View style={styles.sectionContainer}>
+              <TouchableOpacity
+                style={styles.startButtonStyle}
+                activeOpacity = { .5 }
+                onPress={() =>
+                  navigation.navigate('Home')
+                }
+                >
+                  <Text style={styles.buttonText}>Get Started</Text>
+                </TouchableOpacity>
+          </View>
+
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  </>
+
+  );
+};
+
+const HomeScreen = () => {
+  return <Text>Home Screen</Text>;
+};
+
+
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -141,14 +174,16 @@ const styles = StyleSheet.create({
     width: 365, 
     borderRadius: 50, 
     backgroundColor: "#4ccade",
-    marginTop: 50,
+    marginTop: 250,
+    marginBottom: 50,
   },
 
   buttonText: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
-    marginTop: 5,
+    backgroundColor: "#4ccade",
+    borderRadius: 50, 
   },
 });
 

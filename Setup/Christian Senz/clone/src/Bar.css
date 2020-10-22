@@ -1,0 +1,20 @@
+.button1{
+    background-color: green!important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 20px !important;
+    height: 60px !important;
+    margin-top: 20px !important;
+}
+.bar {
+    border-right: 5px solid var(--background);
+    flex: 0.3;
+    min-width: 200px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+
+.tIcon{
+    color: green !important;
+}

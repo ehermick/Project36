@@ -1,0 +1,40 @@
+.adopt{
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-bottom: 5px solid var(--background);
+    padding-right: 10px;
+}
+
+.adopt_input{
+    padding: 20px;
+    display: flex;
+}
+
+.adopt > form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.adopt_input > input{
+    flex: 1;
+    border: none;
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+.tButton{
+    background-color: green!important;
+    color: white !important;
+    border-radius: 30px !important;
+    width: 100px;
+    height: 60px !important;
+    margin-top: 15px !important;
+    font-weight: 600 !important;
+    margin-left: auto !important;
+}
+
+.image{
+    padding: 20px;
+
+}

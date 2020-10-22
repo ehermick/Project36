@@ -94,8 +94,82 @@ const StartScreen = ({ navigation }) => {
   );
 };
 
-const HomeScreen = () => {
-  return <Text>Home Screen</Text>;
+const HomeScreen = ({ navigation }) => {
+  return (
+    <>
+    <StatusBar barStyle="dark-content" />
+    <SafeAreaView>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
+
+        <View style={styles.body}>
+
+          <View style={styles.sectionContainer}>
+            <Text style={styles.setTitle}>
+              Home Page
+            </Text>
+          </View>
+
+
+          <View style={styles.bottomButtons}>
+              <TouchableOpacity
+                style={styles.smallButtonStyle}
+                activeOpacity = { .5 }
+                onPress={() =>
+                  navigation.navigate('Home')
+                }
+                >
+                  <Text style={styles.smallButtonText}>Home</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                style={styles.smallButtonStyle}
+                activeOpacity = { .5 }
+                onPress={() =>
+                  navigation.navigate('Lend')
+                }
+                >
+                  <Text style={styles.smallButtonText}>Lend</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                style={styles.smallButtonStyle}
+                activeOpacity = { .5 }
+                onPress={() =>
+                  navigation.navigate('SaveNow')
+                }
+                >
+                  <Text style={styles.smallButtonText}>Save Now</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                style={styles.smallButtonStyle}
+                activeOpacity = { .5 }
+                onPress={() =>
+                  navigation.navigate('Savings')
+                }
+                >
+                  <Text style={styles.smallButtonText}>Savings</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                style={styles.smallButtonStyle}
+                activeOpacity = { .5 }
+                onPress={() =>
+                  navigation.navigate('Account')
+                }
+                >
+                  <Text style={styles.smallButtonText}>Account</Text>
+                </TouchableOpacity>
+          </View>
+
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  </>
+
+  );
 };
 
 
@@ -184,6 +258,25 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     backgroundColor: "#4ccade",
     borderRadius: 50, 
+  },
+
+  bottomButtons: {
+    backgroundColor: "#ced1d6",
+    flex: 1, 
+    flexDirection: 'row', 
+    alignItems: 'flex-end',
+    marginTop: 408,
+    height: 90,
+  },
+
+  smallButtonStyle: {
+    marginLeft: 18,
+    marginRight: 18,
+    paddingBottom: 25,
+  },
+
+  smallButtonText: {
+    textAlign: 'center',
   },
 });
 
